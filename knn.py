@@ -49,7 +49,7 @@ def main():
 
     knn_model.fit(X_train, y_train)
 
-    impath = "/home/phong/Desktop/img1.webp"
+    impath = "/home/phong/Desktop/Adult-sheep-lambs.webp"
     feature = knn_infer(impath)
 
     distance = knn_model.kneighbors([feature])
@@ -64,7 +64,7 @@ def main():
         distances.append(i)
 
     # Plot figure
-    plt.figure(figsize=(15, 15))
+    plt.figure(figsize=(12, 9))
     plt.subplot(5, 5, 3)
     plt.axis(False)
     img0 = np.asarray(Image.open(impath))
@@ -77,7 +77,7 @@ def main():
         img = np.asarray(Image.open(query[i]))
         plt.imshow(img)
 
-    plt.savefig('test.jpg')
+    plt.savefig('assets/test.jpg', bbox_inches='tight')
 
 if __name__ == "__main__":
     main()

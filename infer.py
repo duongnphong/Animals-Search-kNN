@@ -1,3 +1,7 @@
+# Task 2: Pre-processing images and extract features from the images by 
+# letting it go through the model and convert them to .npy file 
+# -> save all of them 
+
 import torch
 from torchvision.transforms import *
 from model import model_eval
@@ -6,6 +10,7 @@ import numpy as np
 import os
 from tqdm import tqdm
 
+# Transform image with resizing, to tensor, normalization
 def transform(img):
     transform = Compose([
         Resize((224,224)),
@@ -16,11 +21,13 @@ def transform(img):
     img = transform(img)
     return img
 
+# Normalize images with L2 Normalization
 def L2Normalize(feature):
     norm2 = torch.sqrt(torch.sum(torch.square(feature),dim=1))   
     feature = feature / norm2
     return feature
 
+# Take an input of directory and return a list of all paths to all images 
 def append_list(datadir):
     list_img = []
     for class_names in os.listdir(datadir):

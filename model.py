@@ -1,4 +1,5 @@
-from torch import nn
+# Task 1: Intitialize model with eval mode
+
 from torchvision.models import *
 import torch
 

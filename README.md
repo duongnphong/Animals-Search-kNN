@@ -11,6 +11,6 @@ To run, replace the file path of the images inside `knn.py`
 ```bash
 python knn.py
 ```
-Here are some example with different values of `distances` representing how close the test images is to the findings in the dataset:
+Here are some example with different values of `distances` representing how close the test images is, compared to the findings in the dataset:
 ![Infer1](assets/infer1.jpg "infer1")
 ![Infer1](assets/infer2.jpg "infer1")
